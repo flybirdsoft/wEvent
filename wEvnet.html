@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>事件绑定组件</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <style>
+    ul,li{
+    	list-style: none;
+    	margin:0;
+    	padding: 0;
+    }
+	.statistics .viewList{
+
+	}
+	.statistics .viewList li{
+		border-bottom: 1px solid #e0e0e0;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+
+	.statistics .viewList li div{
+		height: 1.8rem;
+		line-height: 1.8rem;
+	}
+	.statistics .viewList li div.light{
+		color:#a8a8a8;
+	}
+    </style>
+</head>
+<body class="statistics">
+
+<ul id="viewList" class="viewList">
+	<li dataid="001">
+		<div class="light">20123年2月2日</div>
+		<div>
+			<span>数据信息</span>
+		</div>
+	</li>
+	<li dataid="002">
+		<div class="light">20123年3月12日</div>
+		<div>
+			<span>信息数据</span>
+		</div>
+	</li>
+	<li dataid="003">
+		<div class="light">20123年3月21日</div>
+		<div>
+			<span>wEvent组件</span>
+		</div>
+	</li>
+
+</ul>
+
+</body>
+</html>
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/wEvent.min.js"></script>
+<script type="text/javascript">
+/*
+功能描述：
+wEvent.on 实现对父元素进行事件绑定，并能处理子元素的事件响应
+*/
+wEvent.on({
+	rootElement:document.getElementById("viewList"), /*被绑定事件的元素*/
+	type:"click",
+	queryString:"li .light",                         /*指定rootElement里的 "li .light" 元素响应事件*/
+	process:function(e){
+		/*this.targets is array of DOM ; targets 对应 queryString里的对象*/
+		alert("你单击了 li元素里class=“light” 的元素");
+		//alert("被触发的DOM:"+this.targets[".light"]);
+		//alert("被触发的DOM:"+this.targets["li"]);
+		alert("dataid : "+$(this.targets["li"]).attr("dataid"));
+		//this.cancelEvent = true;  //取消事件处理
+	}
+});
+
+</script>
