@@ -7,6 +7,10 @@
 示例：
 	
 	<ul id="viewList">
+	    <li>
+	        <div class="light">wEvent组件</div>
+	        <div>wEvent实现列类似JQuery的live功能</div>
+	    </li>
 	</ul>
 
 	wEvent.on({
