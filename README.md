@@ -5,7 +5,9 @@
 对某个DOM元素绑定事件，并对这个DOM下的子元素进行事件管理。
 
 示例：
-
+	
+	<ul id="viewList">
+	</ul>
 
 	wEvent.on({
 		rootElement:document.getElementById("viewList"),
