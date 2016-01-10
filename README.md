@@ -5,27 +5,7 @@
 对某个DOM元素绑定事件，并对这个DOM下的子元素进行事件管理。
 
 示例：
-	<ul id="viewList" class="viewList">
-		<li dataid="001">
-			<div class="light">20123年2月2日</div>
-			<div>
-				<span>数据信息</span>
-			</div>
-		</li>
-		<li dataid="002">
-			<div class="light">20123年3月12日</div>
-			<div>
-				<span>信息数据</span>
-			</div>
-		</li>
-		<li dataid="003">
-			<div class="light">20123年3月21日</div>
-			<div>
-				<span>wEvent组件</span>
-			</div>
-		</li>
 
-	</ul>
 
 	wEvent.on({
 		rootElement:document.getElementById("viewList"),
